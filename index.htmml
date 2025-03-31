@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DRSMart Staff Schedule</title>
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #2c3e50; color: white; padding: 20px; }
+    .header { text-align: center; padding: 10px; background-color: #34495e; }
+    .board { display: flex; justify-content: space-between; margin-top: 20px; }
+    .column { background-color: #16a085; padding: 10px; width: 30%; }
+    .shift { background-color: #1abc9c; margin: 5px; padding: 10px; cursor: pointer; }
+    .shift:hover { background-color: #1e7e6b; }
+    .button { background-color: #2980b9; color: white; padding: 10px; border: none; cursor: pointer; margin: 10px 0; }
+    .button:hover { background-color: #3498db; }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>DRSMart Staff Schedule</h1>
+    <p>Manage your shifts and promotion requests here!</p>
+  </div>
+
+  <div class="board">
+    <!-- Shift Columns -->
+    <div class="column">
+      <h3>Upcoming Shifts</h3>
+      <div class="shift">Shift 1 - Host</div>
+      <div class="shift">Shift 2 - Co-host</div>
+    </div>
+    <div class="column">
+      <h3>Shift Requests</h3>
+      <button class="button" onclick="requestShift()">Request Shift</button>
+      <button class="button" onclick="submitPromotion()">Request Promotion</button>
+    </div>
+    <div class="column">
+      <h3>Approved Shifts</h3>
+      <div class="shift">Shift 3 - Host</div>
+      <div class="shift">Shift 4 - Co-host</div>
+    </div>
+  </div>
+
+  <script>
+    // Shift request functionality
+    function requestShift() {
+      let userRole = prompt("Enter your role (Executive Team / Executive Assistant / Management):");
+      
+      if (userRole === "Executive Team") {
+        alert("Shifts can be approved by the Executive Team.");
+      } else if (userRole === "Executive Assistant") {
+        alert("Shift request submitted, awaiting approval.");
+      } else {
+        alert("Management can request promotions.");
+      }
+    }
+
+    // Promotion request functionality
+    function submitPromotion() {
+      let userRole = prompt("Enter your role (Executive Team / Executive Assistant / Management):");
+      
+      if (userRole === "Management") {
+        alert("Promotion request submitted for approval.");
+      } else {
+        alert("Only Management can request promotions.");
+      }
+    }
+  </script>
+
+</body>
+</html>
